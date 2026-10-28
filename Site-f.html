@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мой первый сайт на AWS</title>
+<style>
+  :root {
+    --bg: #eef3f6;
+    --ink: #12263a;
+    --muted: #51657a;
+    --accent: #1f6f8b;
+    --panel: #ffffff;
+    --line: #cfdbe3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e1a26;
+      --ink: #e7eef4;
+      --muted: #9fb3c4;
+      --accent: #5bb4d1;
+      --panel: #15283a;
+      --line: #264059;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+
+  header { border-bottom: 1px solid var(--line); }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+  nav .logo { font-weight: 700; font-size: 1.05rem; }
+  nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
+  nav a { color: var(--muted); text-decoration: none; }
+  nav a:hover, nav a:focus-visible { color: var(--accent); }
+
+  .hero { padding: 90px 0 70px; }
+  .hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    line-height: 1.12;
+    margin: 0 0 18px;
+    max-width: 16ch;
+  }
+  .hero p { font-size: 1.15rem; color: var(--muted); max-width: 52ch; margin: 0 0 28px; }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn:hover, .btn:focus-visible { filter: brightness(1.1); }
+  @media (prefers-color-scheme: dark) { .btn { color: #0e1a26; } }
+
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  h2 { font-family: Georgia, "Times New Roman", serif; font-size: 1.8rem; margin: 0 0 18px; }
+  section p { max-width: 62ch; color: var(--muted); margin: 0 0 14px; }
+
+  .list { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; margin-top: 22px; }
+  .item { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 20px; }
+  .item h3 { margin: 0 0 8px; font-size: 1.05rem; }
+  .item p { margin: 0; font-size: 0.97rem; }
+
+  .contact a { color: var(--accent); font-weight: 600; }
+
+  footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <span class="logo">Сержанулы Ернур</span>
+      <ul>
+        <li><a href="#about">Обо мне</a></li>
+        <li><a href="#projects">Проекты</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="hero">
+      <h1>Привет! Это мой сайт, размещённый на AWS.</h1>
+      <p>Здесь я рассказываю о себе и показываю свои работы. Страница лежит в облаке Amazon S3 и открывается из любой точки мира.</p>
+      <a class="btn" href="#projects">Смотреть проекты</a>
+    </div>
+
+    <section id="about">
+      <h2>Обо мне</h2>
+      <p>Я студент и учусь создавать сайты и работать с облачными сервисами.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Проекты</h2>
+      <div class="list">
+        <div class="item">
+          <h3>Первый проект</h3>
+          <p>Короткое описание: METRO 2033 , GTA 6.</p>
+        </div>
+        <div class="item">
+          <h3>Второй проект</h3>
+          <p>Короткое описание: Grok , Claude .</p>
+        </div>
+        <div class="item">
+          <h3>Третий проект</h3>
+          <p>Короткое описание: Вы на моем сайте!.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Контакты</h2>
+      <p>Напишите мне: <a href="mailto:example@mail.com">akzigiternur7@gmail.com</a></p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Сержанулы Ернур. Сайт размещён на Amazon S3.</div>
+</footer>
+
+</body>
+</html>
